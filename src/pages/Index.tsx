@@ -1,7 +1,10 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { FeaturedProducts } from "@/components/FeaturedProducts";
+import { CraftmanshipShowcase } from "@/components/CraftmanshipShowcase";
 import { About } from "@/components/About";
+import { Testimonials } from "@/components/Testimonials";
+import { Newsletter } from "@/components/Newsletter";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -11,7 +14,10 @@ const Index = () => {
       <main>
         <Hero />
         <FeaturedProducts />
+        <CraftmanshipShowcase />
         <About />
+        <Testimonials />
+        <Newsletter />
       </main>
       <Footer />
     </div>

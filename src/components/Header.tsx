@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Menu, Search, User } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -7,17 +8,17 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <h1 className="text-2xl font-bold text-primary">Wahret Zmen</h1>
             <span className="text-sm text-muted-foreground font-light">By Sabri</span>
-          </div>
+          </Link>
 
           {/* Navigation - Hidden on mobile */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Home</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Collection</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">About</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Contact</a>
+            <Link to="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
+            <Link to="#collection" className="text-foreground hover:text-primary transition-colors">Collection</Link>
+            <Link to="/about" className="text-foreground hover:text-primary transition-colors">About</Link>
+            <Link to="#contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
           </nav>
 
           {/* Actions */}
@@ -28,12 +29,14 @@ export const Header = () => {
             <Button variant="ghost" size="icon" className="hidden sm:flex">
               <User className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="relative">
-              <ShoppingCart className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                0
-              </span>
-            </Button>
+            <Link to="/cart">
+              <Button variant="ghost" size="icon" className="relative">
+                <ShoppingCart className="h-5 w-5" />
+                <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  0
+                </span>
+              </Button>
+            </Link>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />
             </Button>
