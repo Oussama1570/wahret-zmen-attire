@@ -170,7 +170,9 @@ export default {
 				'fade-in-delay-100': 'fade-in 0.6s ease-out 0.1s both',
 				'fade-in-delay-200': 'fade-in 0.6s ease-out 0.2s both',
 				'fade-in-delay-300': 'fade-in 0.6s ease-out 0.3s both',
-				'fade-in-delay-400': 'fade-in 0.6s ease-out 0.4s both'
+				'fade-in-delay-400': 'fade-in 0.6s ease-out 0.4s both',
+				'fade-in-delay-500': 'fade-in 0.6s ease-out 0.5s both',
+				'fade-in-delay-600': 'fade-in 0.6s ease-out 0.6s both'
 			}
 		}
 	},
