@@ -1,14 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-interface ProductCardProps {
-  name: string;
-  price: string;
-  image: string;
-  originalPrice?: string;
-}
-
-export const ProductCard = ({ name, price, image, originalPrice }: ProductCardProps) => {
+export const ProductCard = ({ name, price, image, originalPrice }) => {
   return (
     <Card className="group overflow-hidden border-border hover:shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
       <div className="overflow-hidden relative">
@@ -27,8 +20,9 @@ export const ProductCard = ({ name, price, image, originalPrice }: ProductCardPr
             <span className="text-lg text-muted-foreground line-through">{originalPrice}</span>
           )}
         </div>
-        <Button variant="luxury" className="w-full transition-all duration-300 hover:scale-105 active:scale-95">
-          Add to Cart
+        <Button variant="luxury" className="w-full transition-all duration-300 hover:scale-105 active:scale-95 relative overflow-hidden group">
+          <span className="relative z-10">Add to Cart</span>
+          <span className="absolute inset-0 bg-luxury-foreground opacity-0 group-hover:animate-ripple rounded-md"></span>
         </Button>
       </CardContent>
     </Card>

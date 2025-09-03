@@ -84,7 +84,11 @@ export const FeaturedProducts = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayProducts.map((product, index) => (
-            <div key={product.id} className={`animate-fade-in-delay-${(index + 3) * 100}`}>
+            <div 
+              key={product.id} 
+              className={`animate-stagger-in-${Math.min(index + 1, 3)} hover:animate-magnetic-hover transition-all duration-500`}
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
               <ProductCard {...product} />
             </div>
           ))}
