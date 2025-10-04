@@ -1,9 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-export const ProductCard = ({ name, price, image, originalPrice }) => {
+export const ProductCard = ({ id, name, price, image, originalPrice }) => {
+  const navigate = useNavigate();
+
   return (
-    <Card className="group overflow-hidden border-border hover:shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+    <Card 
+      className="group overflow-hidden border-border hover:shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
+      onClick={() => navigate(`/product/${id}`)}
+    >
       <div className="overflow-hidden relative">
         <img 
           src={image} 
@@ -20,8 +26,15 @@ export const ProductCard = ({ name, price, image, originalPrice }) => {
             <span className="text-lg text-muted-foreground line-through">{originalPrice}</span>
           )}
         </div>
-        <Button variant="luxury" className="w-full transition-all duration-300 hover:scale-105 active:scale-95 relative overflow-hidden group">
-          <span className="relative z-10">Add to Cart</span>
+        <Button 
+          variant="luxury" 
+          className="w-full transition-all duration-300 hover:scale-105 active:scale-95 relative overflow-hidden group"
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate(`/product/${id}`);
+          }}
+        >
+          <span className="relative z-10">View Details</span>
           <span className="absolute inset-0 bg-luxury-foreground opacity-0 group-hover:animate-ripple rounded-md"></span>
         </Button>
       </CardContent>
