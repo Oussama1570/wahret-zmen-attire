@@ -1,14 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-interface ProductCardProps {
-  name: string;
-  price: string;
-  image: string;
-  originalPrice?: string;
-}
-
-export const ProductCard = ({ name, price, image, originalPrice }: ProductCardProps) => {
+export const ProductCard = ({ name, price, image, originalPrice }) => {
   return (
     <Card className="group overflow-hidden border-border hover:shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
       <div className="overflow-hidden relative">
