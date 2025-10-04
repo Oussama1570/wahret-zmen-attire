@@ -155,39 +155,6 @@ export default {
 					'50%': {
 						boxShadow: '0 0 30px hsl(var(--primary) / 0.6)'
 					}
-				},
-				'typewriter': {
-					'0%': { width: '0' },
-					'100%': { width: '100%' }
-				},
-				'magnetic-hover': {
-					'0%': { transform: 'translate(0, 0) scale(1)' },
-					'50%': { transform: 'translate(2px, -2px) scale(1.02)' },
-					'100%': { transform: 'translate(0, 0) scale(1)' }
-				},
-				'parallax-slow': {
-					'0%': { transform: 'translateY(0px)' },
-					'100%': { transform: 'translateY(-50px)' }
-				},
-				'stagger-in': {
-					'0%': {
-						opacity: '0',
-						transform: 'translateY(40px) scale(0.95)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'translateY(0) scale(1)'
-					}
-				},
-				'ripple': {
-					'0%': {
-						transform: 'scale(0)',
-						opacity: '1'
-					},
-					'100%': {
-						transform: 'scale(1)',
-						opacity: '0'
-					}
 				}
 			},
 			animation: {
@@ -205,15 +172,7 @@ export default {
 				'fade-in-delay-300': 'fade-in 0.6s ease-out 0.3s both',
 				'fade-in-delay-400': 'fade-in 0.6s ease-out 0.4s both',
 				'fade-in-delay-500': 'fade-in 0.6s ease-out 0.5s both',
-				'fade-in-delay-600': 'fade-in 0.6s ease-out 0.6s both',
-				'typewriter': 'typewriter 3s steps(30) 1s both',
-				'magnetic-hover': 'magnetic-hover 0.3s ease-out',
-				'parallax-slow': 'parallax-slow 20s ease-out infinite alternate',
-				'stagger-in': 'stagger-in 0.8s ease-out both',
-				'stagger-in-1': 'stagger-in 0.8s ease-out 0.1s both',
-				'stagger-in-2': 'stagger-in 0.8s ease-out 0.2s both',
-				'stagger-in-3': 'stagger-in 0.8s ease-out 0.3s both',
-				'ripple': 'ripple 0.6s ease-out'
+				'fade-in-delay-600': 'fade-in 0.6s ease-out 0.6s both'
 			}
 		}
 	},
