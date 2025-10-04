@@ -12,7 +12,7 @@ import jebbaburgundy from "@/assets/jebba-burgundy.jpg";
 import jebbaCream from "@/assets/jebba-cream.jpg";
 
 const Collections = () => {
-  const [viewMode, setViewMode] = useState("grid");
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [showFilters, setShowFilters] = useState(false);
   const [priceRange, setPriceRange] = useState([100, 500]);
 
