@@ -1,16 +1,14 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/ProductCard";
+import { ProductCheckoutForm } from "@/components/ProductCheckoutForm";
 import { Star } from "lucide-react";
 import { getProductById, getProductsByCategory } from "@/data/products";
-import { useToast } from "@/hooks/use-toast";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { toast } = useToast();
   const product = getProductById(id || "");
 
   if (!product) {
@@ -19,7 +17,6 @@ const ProductDetails = () => {
         <Header />
         <div className="container mx-auto px-4 py-20 text-center">
           <h1 className="text-4xl font-bold text-foreground mb-4">Product Not Found</h1>
-          <Button onClick={() => navigate("/")}>Return to Home</Button>
         </div>
         <Footer />
       </div>
@@ -27,13 +24,6 @@ const ProductDetails = () => {
   }
 
   const similarProducts = getProductsByCategory(product.category, product.id);
-
-  const handleAddToCart = () => {
-    toast({
-      title: "Added to cart!",
-      description: `${product.name} has been added to your cart.`,
-    });
-  };
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }).map((_, index) => (
@@ -72,12 +62,6 @@ const ProductDetails = () => {
               {product.name}
             </h1>
 
-            {/* Rating */}
-            <div className="flex items-center gap-2 mb-6">
-              <div className="flex gap-1">{renderStars(product.rating)}</div>
-              <span className="text-muted-foreground">({product.rating} stars)</span>
-            </div>
-
             {/* Price */}
             <div className="flex items-center gap-3 mb-6">
               <span className="text-4xl font-bold text-primary">
@@ -96,7 +80,7 @@ const ProductDetails = () => {
             </p>
 
             {/* Product Details */}
-            <div className="mb-8">
+            <div className="mb-6">
               <h3 className="text-xl font-semibold text-foreground mb-4">
                 Product Details
               </h3>
@@ -113,20 +97,37 @@ const ProductDetails = () => {
               </ul>
             </div>
 
-            {/* Checkout Button */}
-            <Button
-              size="lg"
-              className="w-full text-lg py-6"
-              onClick={handleAddToCart}
-            >
-              Add to Cart
-            </Button>
+            {/* Rating */}
+            <div className="flex items-center gap-2 pb-6 border-b border-border">
+              <span className="text-lg font-medium text-foreground">Rating:</span>
+              <div className="flex gap-1">{renderStars(product.rating)}</div>
+              <span className="text-muted-foreground">({product.rating} stars)</span>
+            </div>
           </div>
         </div>
 
+        {/* Checkout Form Section */}
+        <section className="mb-20 pb-12 border-b border-border">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold text-foreground mb-2">
+              Complete Your Purchase
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Fill in your details to order {product.name}
+            </p>
+          </div>
+          
+          <div className="max-w-3xl">
+            <ProductCheckoutForm 
+              productName={product.name}
+              productPrice={product.price}
+            />
+          </div>
+        </section>
+
         {/* Similar Products Section */}
         {similarProducts.length > 0 && (
-          <section className="py-12 border-t border-border">
+          <section className="py-12">
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">
                 Similar Products
