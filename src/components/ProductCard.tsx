@@ -1,17 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 interface ProductCardProps {
+  id: string;
   name: string;
   price: string;
   image: string;
   originalPrice?: string;
 }
 
-export const ProductCard = ({ name, price, image, originalPrice }: ProductCardProps) => {
+export const ProductCard = ({ id, name, price, image, originalPrice }: ProductCardProps) => {
+  const navigate = useNavigate();
+
   return (
-    <Card className="group overflow-hidden border-border hover:shadow-card transition-all duration-500 hover:-translate-y-1">
-      <div className="overflow-hidden">
+    <Card className="group overflow-hidden border-border hover:shadow-card transition-all duration-500 hover:-translate-y-1 cursor-pointer">
+      <div 
+        className="overflow-hidden"
+        onClick={() => navigate(`/product/${id}`)}
+      >
         <img 
           src={image} 
           alt={name}
