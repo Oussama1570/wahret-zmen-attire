@@ -37,7 +37,7 @@ export const products: Product[] = [
     name: "Classic Burgundy Jebba",
     price: 349,
     image: jebbaburgundy,
-    category: "classic",
+    category: "premium",
     rating: 4.5,
     description: "The Classic Burgundy Jebba showcases the timeless beauty of Moroccan heritage. Rich burgundy tones combined with gold accents create an unforgettable statement piece.",
     details: [
@@ -53,7 +53,7 @@ export const products: Product[] = [
     name: "Elegant Cream Jebba",
     price: 279,
     image: jebbaCream,
-    category: "elegant",
+    category: "premium",
     rating: 4,
     description: "Experience understated luxury with the Elegant Cream Jebba. Perfect for special occasions, this piece combines modern sensibilities with traditional design.",
     details: [
