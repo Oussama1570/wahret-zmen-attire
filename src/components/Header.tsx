@@ -16,7 +16,7 @@ export const Header = () => {
           {/* Navigation - Hidden on mobile */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
-            <Link to="/collections" className="text-foreground hover:text-primary transition-colors">Collections</Link>
+            <Link to="#collection" className="text-foreground hover:text-primary transition-colors">Collection</Link>
             <Link to="/about" className="text-foreground hover:text-primary transition-colors">About</Link>
             <Link to="#contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
           </nav>
