@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Menu, Search, User } from "lucide-react";
+import { ShoppingCart, Menu, Search, Package } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
@@ -26,9 +26,9 @@ export const Header = () => {
             <Button variant="ghost" size="icon" className="hidden sm:flex">
               <Search className="h-5 w-5" />
             </Button>
-            <Link to="/login">
+            <Link to="/order-track">
               <Button variant="ghost" size="icon" className="hidden sm:flex">
-                <User className="h-5 w-5" />
+                <Package className="h-5 w-5" />
               </Button>
             </Link>
             <Link to="/cart">

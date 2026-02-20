@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -173,9 +174,11 @@ const Checkout = () => {
                       <span className="text-primary">${orderTotal.toFixed(2)}</span>
                     </div>
 
-                    <Button variant="luxury" className="w-full mt-6" size="lg">
-                      Complete Order
-                    </Button>
+                    <Link to="/order-confirm">
+                      <Button variant="luxury" className="w-full mt-6" size="lg">
+                        Complete Order
+                      </Button>
+                    </Link>
 
                     <div className="text-center text-sm text-muted-foreground mt-4">
                       By completing your order, you agree to our Terms of Service and Privacy Policy
