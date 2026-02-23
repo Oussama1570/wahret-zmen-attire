@@ -10,6 +10,8 @@ import About from "./pages/About";
 import ProductDetails from "./pages/ProductDetails";
 import OrderConfirm from "./pages/OrderConfirm";
 import OrderTrack from "./pages/OrderTrack";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/order-confirm" element={<OrderConfirm />} />
           <Route path="/order-track/:orderId?" element={<OrderTrack />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
