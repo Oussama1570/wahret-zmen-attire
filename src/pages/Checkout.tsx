@@ -286,7 +286,11 @@ const Checkout = () => {
                         Place Order — Pay on Delivery
                       </Button>
                       <p className="text-xs text-center text-muted-foreground leading-relaxed">
-                        By placing your order, you agree to our Terms of Service and Privacy Policy. You will pay ${orderTotal.toFixed(2)} upon delivery.
+                        By placing your order, you agree to our{" "}
+                        <Link to="/terms" className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">Terms of Service</Link>
+                        {" "}and{" "}
+                        <Link to="/privacy" className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">Privacy Policy</Link>.
+                        You will pay ${orderTotal.toFixed(2)} upon delivery.
                       </p>
                     </div>
 
